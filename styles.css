@@ -13,6 +13,11 @@ body {
     background: linear-gradient(45deg, #2c3e50, #3498db);
 }
 
+/* Prevent zoom on double tap */
+body {
+    touch-action: manipulation;
+}
+
 .calculator-container {
     padding: 2rem;
     border-radius: 20px;
@@ -65,6 +70,14 @@ button {
     transition: all 0.3s ease;
 }
 
+/* Better touch targets */
+button {
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
 .neo-btn {
     background: #ecf0f3;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
@@ -105,4 +118,97 @@ button {
 
 .span-two {
     grid-column: span 2;
+}
+
+/* Mobile-specific styles for app experience */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .calculator-container {
+        padding: 1rem;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .calculator {
+        padding: 15px;
+    }
+    
+    .display {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+    
+    .previous-operand {
+        font-size: 1rem;
+    }
+    
+    .buttons-grid {
+        gap: 10px;
+    }
+    
+    button {
+        padding: 20px 15px;
+        font-size: 1.2rem;
+        min-height: 60px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .calculator-container {
+        padding: 0.5rem;
+        margin: 10px;
+    }
+    
+    .current-operand {
+        font-size: 1.8rem;
+    }
+    
+    button {
+        font-size: 1.1rem;
+        min-height: 55px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    
+    .calculator-container {
+        padding: 1rem;
+    }
+    
+    .display {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .current-operand {
+        font-size: 1.5rem;
+    }
+    
+    button {
+        padding: 12px;
+        font-size: 1rem;
+        min-height: 45px;
+    }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+    body {
+        /* Adjust for status bar in standalone mode */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 }
