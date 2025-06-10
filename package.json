@@ -1,0 +1,32 @@
+{
+  "name": "neocalcus",
+  "version": "1.0.0",
+  "description": "A modern web-based calculator with PWA support",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "build": "echo 'No build step required for static web app'",
+    "serve": "npx http-server . -p 8080"
+  },
+  "keywords": [
+    "calculator",
+    "web-app",
+    "pwa",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Agormbia",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Agormbia/Neocalcus.git"
+  },
+  "homepage": "https://agormbia.github.io/Neocalcus",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
